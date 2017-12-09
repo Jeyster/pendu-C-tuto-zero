@@ -2,7 +2,7 @@
 
 #define DEF_FICHIER_MOTS
 
-#define TAILLE_MOT_MAX 1000
+#define TAILLE_MOT_MAX 100
 
 /* Prototypes */
 int nombreMotsDansFichier(FILE* fichier);

@@ -32,8 +32,12 @@ int main()
 		int nombreCoup = 10;
 
 		char motSecret[TAILLE_MOT_MAX];
-		chercherMotDansFichier(motSecret, fichierMots, 3, TAILLE_MOT_MAX);
-		printf("Mot choisi dans liste : %s\n", motSecret);
+		srand(time(NULL));
+        int numeroMot = (rand() % nombreMots) + 1;
+		chercherMotDansFichier(motSecret, fichierMots, numeroMot, TAILLE_MOT_MAX);
+
+		char* sautDeLigne = strchr(motSecret, '\n');
+		*sautDeLigne = '\0';
 		int longueurMot = strlen(motSecret);
 
 		/* Creation chaine de caractere a découvrir,
@@ -63,11 +67,11 @@ int main()
 
 		if (nombreCoup == 0)
 		{
-			printf("\nVous êtes nul, le mot secret etait %s !!!\n\n", motSecret);
+			printf("\nVous etes nul, le mot secret etait %s !!!\n\n", motSecret);
 		}
 		else
 		{
-			printf("\nBravo !!! Vous avez trouvé le mot secret %s !\n\n",motSecret);
+			printf("\nBravo !!! Vous avez trouve le mot secret %s !\n\n",motSecret);
 		}
 
 		free(motAffiche);

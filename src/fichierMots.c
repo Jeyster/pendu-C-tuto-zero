@@ -11,6 +11,8 @@ int nombreMotsDansFichier(FILE* fichier)
 		nombreMots++;
 	}
 
+    rewind(fichier);
+
 	return nombreMots;
 }
 
@@ -22,4 +24,5 @@ void chercherMotDansFichier(char motSecret[], FILE* fichier, const int numeroMot
 		fgets(motSecret, tailleMot, fichier);
 		nombreMots++;
 	}
+    rewind(fichier);
 }
