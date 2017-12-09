@@ -5,5 +5,6 @@
 /* Prototypes */
 void initialisationMot(char* pMot, int tailleMot);
 void chercherRemplacerDansMot(const char* motSecret, char* motAffiche, const char caractereSaisi, const int longueurMot, int* nombreCoup);
+int retirerSautLigneDansString(char *chaine);
 
 #endif

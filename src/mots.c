@@ -28,3 +28,16 @@ void chercherRemplacerDansMot(const char* motSecret, char* motAffiche, const cha
 		}
 	}
 }
+
+int retirerSautLigneDansString(char *chaine)
+{
+    char *sautDeLigne = NULL;
+    sautDeLigne = strchr(chaine, '\n');
+    if (sautDeLigne != NULL)
+    {
+        *sautDeLigne = '\0';
+        return 1;
+    }
+
+    return 0;
+}

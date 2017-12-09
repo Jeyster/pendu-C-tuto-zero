@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "fichierMots.h"
+#include "mots.h"
 
 int nombreMotsDansFichier(FILE* fichier)
 {
@@ -21,8 +22,16 @@ void chercherMotDansFichier(char motSecret[], FILE* fichier, const int numeroMot
 	int nombreMots = 0;
 	while (nombreMots != numeroMot)
 	{
-		fgets(motSecret, tailleMot, fichier);
-		nombreMots++;
+		if (fgets(motSecret, tailleMot, fichier) != NULL)
+        {
+            nombreMots++;
+        }
+        else
+        {
+            printf("!!! Erreur de lecture du fichier !!!");
+        }
 	}
     rewind(fichier);
+
+    retirerSautLigneDansString(motSecret);
 }

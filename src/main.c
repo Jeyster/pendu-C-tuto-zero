@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "tools.h"
 #include "mots.h"
 #include "fichierMots.h"
@@ -36,8 +37,6 @@ int main()
         int numeroMot = (rand() % nombreMots) + 1;
 		chercherMotDansFichier(motSecret, fichierMots, numeroMot, TAILLE_MOT_MAX);
 
-		char* sautDeLigne = strchr(motSecret, '\n');
-		*sautDeLigne = '\0';
 		int longueurMot = strlen(motSecret);
 
 		/* Creation chaine de caractere a découvrir,
